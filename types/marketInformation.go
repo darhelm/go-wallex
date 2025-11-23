@@ -29,23 +29,23 @@ type Direction struct {
 //
 //	GET /v1/markets (result.symbols[*].stats)
 type Stats struct {
-	BidPrice       string    `json:"bidPrice"`
-	AskPrice       string    `json:"askPrice"`
-	DayCh          float64   `json:"24h_ch"`
-	WeekCh         float64   `json:"7d_ch"`
-	DayVolume      string    `json:"24h_volume"`
-	WeekVolume     string    `json:"7d_volume"`
-	QuoteVolumeDay string    `json:"24h_quoteVolume"`
-	HighPriceDay   string    `json:"24h_highPrice"`
-	LowPriceDay    string    `json:"24h_lowPrice"`
-	LastPrice      string    `json:"lastPrice"`
-	LastQty        string    `json:"lastQty"`
-	LastTradeSide  string    `json:"lastTradeSide"`
-	BidVolume      string    `json:"bidVolume"`
-	AskVolume      string    `json:"askVolume"`
-	BidCount       int64     `json:"bidCount"`
-	AskCount       int64     `json:"askCount"`
-	Direction      Direction `json:"direction"`
+	BidPrice       string         `json:"bidPrice"`
+	AskPrice       string         `json:"askPrice"`
+	DayCh          NumericOrEmpty `json:"24h_ch"`
+	WeekCh         NumericOrEmpty `json:"7d_ch"`
+	DayVolume      string         `json:"24h_volume"`
+	WeekVolume     string         `json:"7d_volume"`
+	QuoteVolumeDay string         `json:"24h_quoteVolume"`
+	HighPriceDay   string         `json:"24h_highPrice"`
+	LowPriceDay    string         `json:"24h_lowPrice"`
+	LastPrice      string         `json:"lastPrice"`
+	LastQty        string         `json:"lastQty"`
+	LastTradeSide  string         `json:"lastTradeSide"`
+	BidVolume      string         `json:"bidVolume"`
+	AskVolume      string         `json:"askVolume"`
+	BidCount       int64          `json:"bidCount"`
+	AskCount       int64          `json:"askCount"`
+	Direction      Direction      `json:"direction"`
 }
 
 // SymbolInfo represents the complete metadata of a trading symbol (market pair)
