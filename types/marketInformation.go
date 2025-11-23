@@ -1,6 +1,7 @@
 package types
 
 import (
+	"encoding/json"
 	"time"
 )
 
@@ -16,6 +17,27 @@ import (
 type Direction struct {
 	Sell float64 `json:"SELL"`
 	Buy  float64 `json:"BUY"`
+}
+
+func (d *Direction) UnmarshalJSON(data []byte) error {
+	// If Wallex returns [], convert to empty object
+	if string(data) == "[]" {
+		*d = Direction{}
+		return nil
+	}
+
+	// Normal expected case
+	type alias Direction
+	var obj alias
+
+	if err := json.Unmarshal(data, &obj); err == nil {
+		*d = Direction(obj)
+		return nil
+	}
+
+	// Fallback: leave empty
+	*d = Direction{}
+	return nil
 }
 
 // Stats contains 24-hour and 7-day market statistics for a trading pair,
