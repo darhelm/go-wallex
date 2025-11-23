@@ -1,0 +1,5 @@
+*.env
+build
+dist
+go-wallex/.idea
+git-diff.txt
