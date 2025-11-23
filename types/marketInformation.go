@@ -74,6 +74,13 @@ type SymbolInfo struct {
 	MinNotional        int64     `json:"minNotional"`
 	Stats              Stats     `json:"stats"`
 	CreatedAt          time.Time `json:"createdAt"`
+	EnName             string    `json:"enName"`
+	EnBaseAsset        string    `json:"enBaseAsset"`
+	EnQuoteAsset       string    `json:"enQuoteAsset"`
+	TmnVolumeDay       string    `json:"24h_tmnVolume"`
+	IsNew              bool      `json:"isNew"`
+	IsZeroFee          bool      `json:"isZeroFee"`
+	IsMarketTypeEnable bool      `json:"isMarketTypeEnable"`
 }
 
 // Symbols is a container type wrapping a map of symbol identifiers to their
