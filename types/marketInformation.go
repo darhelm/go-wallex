@@ -2,6 +2,7 @@ package types
 
 import (
 	"encoding/json"
+	"strconv"
 	"time"
 )
 
@@ -129,6 +130,42 @@ type Order struct {
 	Price    float64 `json:"price"`
 	Quantity float64 `json:"quantity"`
 	Sum      string  `json:"sum"`
+}
+
+func (o *Order) UnmarshalJSON(data []byte) error {
+	type raw Order
+	var aux struct {
+		Price any `json:"price"`
+		raw
+	}
+
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+
+	// Convert number → float64 (already number)
+	switch v := aux.Price.(type) {
+	case float64:
+		o.Price = v
+
+	// Convert string → float64
+	case string:
+		f, err := strconv.ParseFloat(v, 64)
+		if err != nil {
+			o.Price = 0
+		} else {
+			o.Price = f
+		}
+
+	default:
+		o.Price = 0
+	}
+
+	// Copy other fields unchanged
+	o.Quantity = aux.raw.Quantity
+	o.Sum = aux.raw.Sum
+
+	return nil
 }
 
 // OrderBook holds the full depth for a symbol: arrays of bid and ask levels.
