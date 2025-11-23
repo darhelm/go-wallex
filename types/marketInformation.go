@@ -97,7 +97,7 @@ type MarketInformation struct {
 //	GET /v1/depth
 //	GET /v2/depth/all
 type Order struct {
-	Price    string  `json:"price"`
+	Price    float64 `json:"price"`
 	Quantity float64 `json:"quantity"`
 	Sum      string  `json:"sum"`
 }
