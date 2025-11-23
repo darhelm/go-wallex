@@ -15,7 +15,7 @@ type CancelOrder struct {
 	ExecutedPrice   string    `json:"executedPrice"`
 	Sum             string    `json:"sum"`
 	Fee             string    `json:"fee"`
-	ExecutedPercent string    `json:"executedPercent"`
+	ExecutedPercent float64   `json:"executedPercent"`
 	Status          string    `json:"status"`
 	Active          bool      `json:"active"`
 	Fills           []any     `json:"fills"`
