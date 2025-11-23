@@ -437,7 +437,7 @@ func (c *Client) CancelOrder(clientOrderId string) (*t.CancelOrderResponse, erro
 func (c *Client) GetOpenOrders(symbol string) (*t.OpenOrdersResponse, error) {
 	var orders *t.OpenOrdersResponse
 
-	var endPoint = "account/openOrders"
+	var endPoint = "/account/openOrders"
 	if symbol != "" {
 		endPoint = fmt.Sprintf("%s?symbol=%s", endPoint, symbol)
 	}
