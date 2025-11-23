@@ -155,7 +155,7 @@ type Depth struct {
 //	{ "success": true, "result": { "BTCUSDT": { ... }, "ETHUSDT": { ... }, ... } }
 type AllDepths struct {
 	BaseResponse
-	Result map[string]Depth `json:"result"`
+	Result map[string]OrderBook `json:"result"`
 }
 
 // Trade represents a single executed trade on Wallex, returned in the recent
