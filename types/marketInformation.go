@@ -86,7 +86,7 @@ type Symbols struct {
 // MarketInformation wraps the result from /markets
 type MarketInformation struct {
 	BaseResponse
-	Result map[string]string `json:"result"`
+	Result map[string]Symbols `json:"result"`
 }
 
 // Order represents a single order book level (price level).
