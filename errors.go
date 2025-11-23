@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	t "go-wallex/types"
+	t "github.com/darhelm/go-wallex/types"
 )
 
 type GoWallexError struct {

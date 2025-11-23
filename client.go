@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	t "go-wallex/types"
-	u "go-wallex/utils"
+	t "github.com/darhelm/go-wallex/types"
+	u "github.com/darhelm/go-wallex/utils"
 )
 
 // Constants defining the API base URL and version.
