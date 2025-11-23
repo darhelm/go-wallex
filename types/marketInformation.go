@@ -43,8 +43,8 @@ type Stats struct {
 	LastTradeSide  string         `json:"lastTradeSide"`
 	BidVolume      string         `json:"bidVolume"`
 	AskVolume      string         `json:"askVolume"`
-	BidCount       int64          `json:"bidCount"`
-	AskCount       int64          `json:"askCount"`
+	BidCount       NumericOrEmpty `json:"bidCount"`
+	AskCount       NumericOrEmpty `json:"askCount"`
 	Direction      Direction      `json:"direction"`
 }
 
