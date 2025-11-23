@@ -477,7 +477,7 @@ func (c *Client) GetOrderStatus(clientOrderId string) (*t.BaseOrderResponse, err
 		}
 	}
 
-	err := c.ApiRequest("POST", fmt.Sprintf("/account/orders/%s", clientOrderId), "v1", true, nil, &orders)
+	err := c.ApiRequest("GET", fmt.Sprintf("/account/orders/%s", clientOrderId), "v1", true, nil, &orders)
 	if err != nil {
 		return nil, err
 	}
