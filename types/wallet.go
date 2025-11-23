@@ -19,5 +19,5 @@ type Balances struct {
 // keyed by currency symbol and grouped under a Balances field under Result.
 type Wallets struct {
 	BaseResponse
-	Results Balances `json:"results"`
+	Result Balances `json:"result"`
 }
