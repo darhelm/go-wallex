@@ -14,8 +14,8 @@ import (
 //
 // Both fields represent percentages (0–100). The JSON keys are uppercase.
 type Direction struct {
-	Sell int `json:"SELL"`
-	Buy  int `json:"BUY"`
+	Sell float64 `json:"SELL"`
+	Buy  float64 `json:"BUY"`
 }
 
 // Stats contains 24-hour and 7-day market statistics for a trading pair,
@@ -70,7 +70,7 @@ type SymbolInfo struct {
 	FaQuoteAsset       string    `json:"faQuoteAsset"`
 	StepSize           int64     `json:"stepSize"`
 	TickSize           int64     `json:"tickSize"`
-	MinQty             int64     `json:"minQty"`
+	MinQty             float64   `json:"minQty"`
 	MinNotional        int64     `json:"minNotional"`
 	Stats              Stats     `json:"stats"`
 	CreatedAt          time.Time `json:"createdAt"`
